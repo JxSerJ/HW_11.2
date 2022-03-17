@@ -40,4 +40,4 @@ def page_search_by_skill():
     return render_template('search_by_skill.html')
 
 
-application.run(debug=True)
+application.run(debug=False)

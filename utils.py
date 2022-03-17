@@ -33,7 +33,6 @@ def build_candidate_instances_and_skill_list(data: dict) -> tuple[dict, list]:
                               age=candidate_data["age"], skills=candidate_data["skills"])
         skill_list.extend([skill.lower() for skill in candidate.skills])
         candidate_dict[candidate_id] = candidate
-        print(candidate)
 
     skill_list = list(set(skill_list))
 
@@ -41,12 +40,26 @@ def build_candidate_instances_and_skill_list(data: dict) -> tuple[dict, list]:
 
 
 def get_candidate(candidate_dict: dict, candidate_id: int) -> Candidate:
+    """
+    Get Candidate instance by candidate id.
+
+    :param candidate_dict: all candidates instances in dict
+    :param candidate_id: candidate id
+    :return: Candidate instance
+    """
     for i in candidate_dict:
         if candidate_id == i:
             return candidate_dict[i]
 
 
 def get_candidates_by_name(candidate_dict: dict, search_data_from_input: str) -> list[Candidate] or str:
+    """
+    Get list of Candidate instances by name. User input string is used for search.
+
+    :param candidate_dict: all candidates instances in dict
+    :param search_data_from_input: string which was acquired by flask app.
+    :return: list of Candidate instances which meets the search data in .name field
+    """
 
     found_candidate_list = []
 
@@ -65,6 +78,13 @@ def get_candidates_by_name(candidate_dict: dict, search_data_from_input: str) ->
 
 
 def get_candidates_by_skill(candidate_dict: dict, search_data_from_input: str) -> set[Candidate] or str:
+    """
+    Get list of Candidate instances by skill. User input string is used for search.
+
+    :param candidate_dict: all candidates instances in dict
+    :param search_data_from_input: string which was acquired by flask app.
+    :return: list of Candidate instances which meets the search data in .skills field
+    """
 
     found_candidate_list = []
 
