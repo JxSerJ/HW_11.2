@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск по имени</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <h1>Поиск по имени</h1>
+    <hr><br>
+</div>
+<div>
+    <img class="img_float" src="/static/search-icon.webp" height="25px" alt="">
+    <form action="/search_by_name" method="post">
+        <input type="text" name="search_data_from_input" placeholder="Введите имя" />
+        <input type="submit" value="Найти" />
+    </form>
+</div>
+{% if search_data and search_data == "no_data" %}
+<div>
+    <h4 class="search-error">Ничего не найдено</h4>
+</div>
+{% elif search_data and search_data == "no_input" %}
+<div>
+    <h4 class="search-error">Не введён запрос</h4>
+</div>
+{% elif search_data %}
+<div>
+    <h4>Найдено совпадений: {{ search_data|length }}</h4>
+    {% for candidate in search_data %}
+    <p><a class="a_ordinary" href="/candidate/{{ candidate.candidate_id }}">{{ candidate.name }}</a></p>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="a_buttons cls_left">
+    <p><br><br>
+    <a href="/">На главную</a></p>
+    <p><a href="/search_by_skill">Поиск по навыку</a></p>
+</div>
+
+</body>
+</html>

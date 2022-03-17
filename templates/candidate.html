@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кандидат: {{candidate.name}}</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <h1>{{ candidate.name }}</h1>
+    <hr>
+    <img class="img_float" src="{{ candidate.avatar }}" alt="Аватар">
+</div>
+<div>
+    <strong>Позиция: </strong>{{ candidate.position }}<br>
+    <strong>Навыки: </strong>{{ candidate.skills }}<br><br>
+    <strong>Пол: </strong>{{ candidate.gender }}<br>
+    <strong>Возраст: </strong>{{ candidate.age }}
+</div>
+<div class="a_buttons cls_left">
+    <p><br><br>
+    <a href="/">На главную</a></p>
+    <p><a href="/search_by_name">Поиск по имени</a></p>
+    <p><a href="/search_by_skill">Поиск по навыку</a></p>
+</div>
+</body>
+</html>

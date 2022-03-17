@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список кандидатов</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+<H1>Список кандидатов</H1>
+<hr>
+{% for candidate in candidates.values() %}
+    <p><a class="a_ordinary" href="/candidate/{{ candidate.candidate_id }}">{{ candidate.name }}</a></p>
+{% endfor %}
+<div class="a_buttons cls_left">
+    <br><br>
+    <p><a href="/search_by_name">Поиск по имени</a></p>
+    <p><a href="/search_by_skill">Поиск по навыку</a></p>
+</div>
+<div>
+    <br><br><a class="a_ordinary" href="/elon">Илон Маск</a><strong> (Часть 1 ДЗ)</strong>
+</div>
+</body>
+</html>

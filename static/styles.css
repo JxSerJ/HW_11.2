@@ -1,0 +1,43 @@
+hr {
+    border: 2px solid cadetblue;
+    margin-left: 0;
+    max-width: 700px;
+}
+.img_float {
+    vertical-align: middle;
+    float:left;
+    padding-right: 10px;
+}
+input {
+    height: 20px;
+    vertical-align: middle;
+}
+.cls_left {
+    clear: left;
+}
+mark {
+    color: wheat;
+    background-color: chocolate;
+}
+.a_ordinary {
+    color: #2d68d7;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.a_buttons {
+    color: brown;
+    font-weight: 600
+}
+body {
+    font-family: sans-serif;
+}
+a {
+    color: inherit;
+}
+.search-error {
+    color: gray
+}
+.skill-text {
+    font-size: 13px;
+    padding-top: 0;
+}
