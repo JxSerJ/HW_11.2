@@ -1,5 +1,6 @@
 import json
 from classes.Candidate import Candidate
+from typing import Union
 
 
 def load_candidates(path: str) -> dict:
@@ -52,7 +53,7 @@ def get_candidate(candidate_dict: dict, candidate_id: int) -> Candidate:
             return candidate_dict[i]
 
 
-def get_candidates_by_name(candidate_dict: dict, search_data_from_input: str) -> list[Candidate] or str:
+def get_candidates_by_name(candidate_dict: dict, search_data_from_input: str) -> Union[list[Candidate], str]:
     """
     Get list of Candidate instances by name. User input string is used for search.
 
@@ -77,7 +78,7 @@ def get_candidates_by_name(candidate_dict: dict, search_data_from_input: str) ->
         return found_candidate_list
 
 
-def get_candidates_by_skill(candidate_dict: dict, search_data_from_input: str) -> set[Candidate] or str:
+def get_candidates_by_skill(candidate_dict: dict, search_data_from_input: str) -> Union[set[Candidate], str]:
     """
     Get list of Candidate instances by skill. User input string is used for search.
 
