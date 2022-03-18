@@ -13,5 +13,5 @@ class Candidate:
         print(f"Initialization of instance ID {self.candidate_id} - complete")
 
     def __repr__(self):
-        return f"ID: {self.candidate_id}\nName: {self.name}\nAvatar: {self.avatar}\nPosition: {self.position}\n" \
+        return f"\nID: {self.candidate_id}\nName: {self.name}\nAvatar: {self.avatar}\nPosition: {self.position}\n" \
                f"Gender: {self.gender}\nAge: {self.age}\nSkills: {self.skills}\n"
