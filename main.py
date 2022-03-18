@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from config import DATA_FILE_PATH
-from utils import load_candidates, build_candidate_instances_and_skill_list, get_candidate, get_candidates_by_name,\
+from utils import load_candidates, build_candidate_instances_and_skill_list, get_candidate, get_candidates_by_name, \
     get_candidates_by_skill
 
 application = Flask(__name__)
@@ -38,6 +38,13 @@ def page_search_by_skill():
         search_data = request.form.get("search_data_from_input").lower()
         return render_template('search_by_skill.html', search_data=get_candidates_by_skill(candidate_dict, search_data))
     return render_template('search_by_skill.html')
+
+
+@application.route("/skills", methods=["GET"])
+@application.route("/skills/<skill_name>", methods=["GET"])
+def page_skills(skill_name=None):
+    return render_template('skills.html', skill_name=skill_name,
+                           skill_list=skill_list, search_data=get_candidates_by_skill(candidate_dict, skill_name))
 
 
 application.run(debug=False)

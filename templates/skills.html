@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Навыки</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <h1>Навыки кандидатов</h1>
+    <hr><br>
+</div>
+<div class="skill-list">
+    {% for skill in skill_list %}
+    <div class="a_ordinary" style="padding-bottom: 5px"><a href="/skills/{{ skill }}">{{ skill.capitalize() }}</a></div>
+    {% endfor %}
+    <div class="a_buttons cls_left">
+        <p><br><br>
+        <a href="/">На главную</a></p>
+        <p><a href="/search_by_name">Поиск по имени</a></p>
+        <p><a href="/search_by_skill">Поиск по навыку</a></p>
+    </div>
+</div>
+{% if skill_name %}
+<div class="found_list">
+    <h2>Найдено совпадений: {{ search_data|length }}</h2>
+    {% for candidate in search_data %}
+    <div class="a_ordinary"><a href="/candidate/{{ candidate.candidate_id }}">{{ candidate.name }}</a></div>
+    <div class="skill-text">Навыки: {{ candidate.skills }}</div><br>
+    {% endfor %}
+</div>
+{% endif %}
+<div class="a_buttons cls_left">
+    <p><br><br>
+    <a href="/">На главную</a></p>
+    <p><a href="/search_by_name">Поиск по имени</a></p>
+    <p><a href="/search_by_skill">Поиск по навыку</a></p>
+</div>
+</body>
+</html>

@@ -31,7 +31,7 @@ def build_candidate_instances_and_skill_list(data: dict) -> tuple[dict, list]:
         candidate = Candidate(candidate_id=candidate_id, name=candidate_data["name"], avatar=candidate_data["picture"],
                               position=candidate_data["position"], gender=candidate_data["gender"],
                               age=candidate_data["age"], skills=candidate_data["skills"])
-        skill_list.extend([skill.lower() for skill in candidate.skills])
+        skill_list.extend([skill.lower() for skill in candidate.skills.split(", ")])
         candidate_dict[candidate_id] = candidate
 
     skill_list = list(set(skill_list))
@@ -101,6 +101,3 @@ def get_candidates_by_skill(candidate_dict: dict, search_data_from_input: str) -
         return "no_data"
     else:
         return set(found_candidate_list)
-
-
-

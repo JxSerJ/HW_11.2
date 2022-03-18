@@ -41,3 +41,18 @@ a {
     font-size: 13px;
     padding-top: 0;
 }
+.skill-list {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background-color: #eee;
+    position: fixed;
+}
+.found_list {
+    background-color: #eee;
+    display: flow;
+    width: fit-content;
+    height: 100%;
+    padding: 10px;
+    margin-left: 250px;
+}
