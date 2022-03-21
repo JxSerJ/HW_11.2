@@ -1,5 +1,5 @@
 import json
-from classes.Candidate import Candidate
+from classes.candidate import Candidate
 from typing import Union
 
 
